@@ -4,42 +4,34 @@ from twilio.rest import Client
 from twilio.base.exceptions import TwilioRestException
 
 # 1. Initialize the Twilio Client with your single Account SID and Auth Token
-ACCOUNT_SID = os.environ.get('TWILIO_ACCOUNT_SID', 'AC2cb3d566b801721a41c7599f682a67d4')
-AUTH_TOKEN = os.environ.get('TWILIO_AUTH_TOKEN', '4512297ef74dc62507bd01b31b0b52d0')
+ACCOUNT_SID = os.environ.get('TWILIO_ACCOUNT_SID', 'ENTER_CODE')
+AUTH_TOKEN = os.environ.get('TWILIO_AUTH_TOKEN', 'ENTER_CODE')
 client = Client(ACCOUNT_SID, AUTH_TOKEN)
 
 # 2. Define your pool of Twilio outbound numbers
 twilio_caller_ids = [
-    '+17179054291', 
-    '+17178925593', 
-    '+17178077317'
+    '+YOUR_numbers', 
+    '+YOUR_numbers', 
+    '+YOUR_numbers'
 ]
 
 # 3. Define the list of recipients you want to call
 target_recipients = [
-    '+17178761447',
-    '+17178761457',
-    '+17178761503',
-    '+17178761476',
-    '+17178761424',
-    '+17178761462',
-    '+17178761486',
-    '+17178761501',
-    '+17178761495',
-    '+17178761451',
-    '+17178761481',
-    '+17178761438',
-    '+17178761415',
-    '+17178761450',
-    '+17178761420',
-    '+17178761411',
-    '+17178761446',
-    '+17178761401',
-    '+17178761499'	
+    '+1717876scammer',
+    '+1717876scammer',
+    '+1717876scammer',
+    '+1717876scammer',
+    '+1717876scammer',
+    '+1717876scammer',
+    '+1717876scammer',
+    '+1717876scammer',
+    '+1717876scammer',
+    '+ETC ETC ETC',
+    '+1717876scammer'	
 ]
 
-# 4. Your audio instructions
-audio_url = 'https://burp.digitaloffensive.com/pedo.mp3'
+# 4. Your audio instructions: Be creative :)
+audio_url = 'https://url_to_your_hosted_file/stop.mp3' 
 twiml_url = f'https://twimlets.com/echo?Twiml=%3CResponse%3E%3CPlay%3E{audio_url}%3C%2FPlay%3E%3C%2FResponse%3E'
 
 print(f"Starting broadcast to {len(target_recipients)} numbers using {len(twilio_caller_ids)} outbound lines...\n")
